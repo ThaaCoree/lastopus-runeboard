@@ -1,0 +1,254 @@
+:root {
+  --bg-main: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-hover: #2a2a2a;
+
+  --border: #333;
+  --border-light: #444;
+
+  --text-main: #eaeaea;
+  --text-secondary: #aaa;
+
+  --accent: #4da3ff;
+  --danger: #e24b4a;
+}
+
+/* --------- GLOBAL --------- */
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* --------- GRID --------- */
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(6, 50px);
+  gap: 4px;
+  padding: 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* --------- CELL --------- */
+
+.grid-cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--border);
+  background: #fff;
+  transition: 0.15s;
+}
+
+.grid-cell:hover {
+  outline: 2px solid var(--accent);
+}
+
+/* --------- INVENTORY --------- */
+
+#inventory {
+  width: 220px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+#runeList > div {
+  background: var(--bg-main);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+#runeList > div:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+}
+
+/* --------- BUTTON --------- */
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* --------- DANGER BUTTON --------- */
+
+.btn-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: rgba(226, 75, 74, 0.15);
+}
+
+/* --------- COMBOBOX --------- */
+
+select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  cursor: pointer;
+  outline: none;
+}
+
+select:hover {
+  border-color: var(--accent);
+}
+
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* --------- LABEL --------- */
+
+.label {
+  font-size: 16px;
+  white-space: pre-line;
+}
+
+/* --------- LAYOUT --------- */
+
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* -------- TOP BAR -------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* -------- MAIN LAYOUT -------- */
+
+.layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* -------- SIDEBAR -------- */
+
+.sidebar {
+  width: 160px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label-item {
+  background: var(--bg-main);
+  border: 1px solid var(--border-light);
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: pre-line;
+}
+
+/* highlight value */
+.label-item strong {
+  color: var(--text-main);
+}
+
+.content {
+    align-items:center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 8px;
+}
+
+#saveBtn {
+  margin-top: auto;
+}
+
+.center-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#pieceDisplay {
+  /* ปรับตามต้องการ */
+  min-height: 60px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.mini-grid {
+  display: grid;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 6px;
+  align-items: center;
+  justify-items: center;
+}
+
+.holding-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
