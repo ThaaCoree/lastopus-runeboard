@@ -148,7 +148,7 @@ export function renderInventory() {
     const div = document.createElement("div");
     div.classList.add("label");
 
-    div.textContent = `${rune.name}\n${rune.statusDescription}${rune.description}`;
+    div.textContent = `${id} : ${rune.name}\n${rune.statusDescription}${rune.description}`;
 
     const placeButton = document.createElement("button");
     placeButton.classList.add("btn");
