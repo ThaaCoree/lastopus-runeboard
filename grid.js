@@ -122,7 +122,11 @@ function removePiece(row, col) {
 }
 
 function returnRuneFromHand() {
-  const emptySlot = Object.entries(inventory).find(([key, r]) => r || r.name === "");
+  if (r.name) {
+    const emptySlot = Object.entries(inventory).find(([key, r]) => r || r.name === "");
+    } else {
+    const emptySlot = Object.entries(inventory).find(([key, r]) => r);
+    }
 
   if (emptySlot) {
     const key = parseInt(emptySlot[0]);
@@ -295,7 +299,11 @@ function renderStats(row, col) {
   saveButton.textContent = "Save";
   saveButton.onclick = async () => {
     try {
+    if (r.name) {
     const emptySlot = Object.entries(inventory).find(([key, r]) => r || r.name === "");
+    } else {
+    const emptySlot = Object.entries(inventory).find(([key, r]) => r);
+    }
 
   if (emptySlot) {
     const key = parseInt(emptySlot[0]);
