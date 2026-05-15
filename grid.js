@@ -316,6 +316,7 @@ function renderStats(row, col) {
       });
       const data = await res.text();
       alert(data);
+      window.location.reload();
     } catch (err) {
       console.error(err);
       alert("Save Error");
