@@ -167,8 +167,11 @@ function holdRune(rune) {
         returnRuneFromHand();
       }
       {
+        rune.shape = trimShape(rune.shape);
         holdingPiece = createPiece(rune.shape, "crimson", unit.socketed_runes.length + 2);
         holdingRune = rune;
+        console.log(holdingRune);
+        console.log(holdingPiece);
         
       inventory = Object.fromEntries(
       Object.entries(inventory).filter(([id, r]) => r !== rune)
@@ -338,6 +341,19 @@ function rotate90(shape) {
   }
 
   return result;
+}
+
+function trimShape(shape) {
+  // ตัด row ว่างบน/ล่าง
+  let top = shape.findIndex(row => row.some(Boolean));
+  let bottom = shape.findLastIndex(row => row.some(Boolean));
+  let trimmed = shape.slice(top, bottom + 1);
+
+  // ตัด col ว่างซ้าย/ขวา
+  let left = Math.min(...trimmed.map(row => row.findIndex(Boolean)));
+  let right = Math.max(...trimmed.map(row => row.findLastIndex(Boolean)));
+
+  return trimmed.map(row => row.slice(left, right + 1));
 }
 
 export function setUnits(data) {
