@@ -8,6 +8,7 @@ let hoverCol = -1;
 let units = null;
 let unit = null;
 let inventory = null;
+let favorites = new Set();
 const count = 10; // จำนวนสีที่ต้องการ
 const colors = Array.from({ length: count }, (_, i) =>
   `hsl(${Math.round(i * (360 / count))}, 55%, 50%)`
@@ -147,6 +148,7 @@ export function renderInventory() {
     if (!rune || !rune.name) return;
     const div = document.createElement("div");
     div.classList.add("label");
+    if (favorites.has(id)) div.classList.add("favorite");
 
     div.textContent = `${id} : ${rune.name}\n${rune.statusDescription}${rune.description}`;
 
@@ -372,11 +374,12 @@ export function getUnit() {
 export function setUnit(name) {
   unit = name;
   inventory = unit.rune_inventory;
+  favorites = new Set((unit.favoriteRunes || []).map(String)); // แปลงเป็น string ให้ตรงกับ id
   board.forEach((row, r) => {
     row.forEach((_, c) => {
       board[r][c] = 0;
     });
-});
+  });
 }
 
 export function resetAll() {

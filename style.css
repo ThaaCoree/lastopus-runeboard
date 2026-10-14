@@ -95,6 +95,10 @@ body {
   transform: scale(0.96);
 }
 
+.label.favorite {
+  color: #1e6fff;
+}
+
 /* --------- DANGER BUTTON --------- */
 
 .btn-danger {
