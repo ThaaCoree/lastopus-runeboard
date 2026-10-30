@@ -16,7 +16,11 @@ const UNIT_NAMES = [
   "Esther",
   "Yasha",
   "Voahri",
-  "Scarlet"
+  "Scarlet",
+  "Veyron",
+  "THUS",
+  "Ravel",
+  "Blazer"
 ];
 
 async function loadBoard() {
