@@ -20,7 +20,11 @@ const UNIT_NAMES = [
   "Veyron",
   "THUS",
   "Ravel",
-  "Blazer"
+  "Blazer",
+  "Marrhe",
+  "Q-Bik",
+  "Silver Obsidian",
+  "Hunter Blackwood"
 ];
 
 async function loadBoard() {
